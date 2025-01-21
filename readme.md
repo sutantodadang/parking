@@ -9,7 +9,7 @@ Install project with **go 1.23** version
 ## Usage/Examples
 
 ```bash
-go run main.go
+go run main.go -file='input.csv'
 ```
 
 ### Output

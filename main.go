@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -19,11 +20,17 @@ const (
 
 func main() {
 
+	var input = flag.String("file", "input.csv", "input file")
+
+	flag.Parse()
+
 	var parkingLot []string
 	var freeParkingSlot []int
 	var space int
 
-	inputFile, err := os.OpenFile("input.csv", os.O_RDWR|os.O_CREATE, 0666)
+	fmt.Println("Welcome to Parking Lot System")
+
+	inputFile, err := os.OpenFile(*input, os.O_RDWR|os.O_CREATE, 0666)
 	if err != nil {
 		panic(err)
 	}
